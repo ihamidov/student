@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 17082020-4
+      author: ihamidov
+      changes:
+        - addColumn:
+            tableName: student
+            columns:
+              - column:
+                  name: project_id
+                  type: bigint

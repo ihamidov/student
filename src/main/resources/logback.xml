@@ -1,0 +1,15 @@
+<configuration>
+    <appender name="STUDENT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%15.15t] %40.40c{40} : %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+    <logger name="az.ingress.student" level="TRACE" additivity="false">
+        <appender-ref ref="STUDENT"/>
+    </logger>
+    <root level="INFO">
+        <appender-ref ref="STUDENT"/>
+    </root>
+</configuration>

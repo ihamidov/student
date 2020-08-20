@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 16082020
+      author: ihamidov
+      changes:
+        - sql:
+            sql:  insert into student ( first_name, last_name, age) values ('Ibrahim','Hamidov','27');
+        - sql:
+            sql:  insert into student ( first_name, last_name, age) values ('Ibrahim','Hamidov','22');
+        - sql:
+            sql:  insert into student ( first_name, last_name, age) values ('Ibrahim','Hamidov','32');
+        - sql:
+            sql:  insert into student ( first_name, last_name, age) values ('Ibrahim','Hamidov','30');
+        - sql:
+            sql:  insert into student ( first_name, last_name, age) values ('Ibrahim','Hamidov','26');
+        - sql:
+            sql:  insert into student ( first_name, last_name, age) values ('Ayaz','Nacafli','26');
+
