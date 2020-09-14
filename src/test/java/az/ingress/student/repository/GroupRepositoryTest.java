@@ -15,38 +15,35 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @DataJpaTest
 @ExtendWith(SpringExtension.class)
 public class GroupRepositoryTest {
-//
-//    @Autowired
-//    private StudentRepository studentRepository;
-//
-//    @Autowired
-//    private GroupRepository groupRepository;
 
-    @Test
-    void test(){
-        System.out.println("iibrahimm");
-    }
+    @Autowired
+    private StudentRepository studentRepository;
+
+    @Autowired
+    private GroupRepository groupRepository;
+
 //    @Test
 //    void givenTwoStudentsAndOneGroupWhenSaveGroupThenStudentsArePersisted() {
-//        //Arrange
+        //Arrange
+//        System.out.println("ibrahim");
 //        Group group = Group
 //                .builder()
 //                .name("Microservices")
 //                .description("Microservice development students group")
 //                .build();
 //        Student student = Student.builder()
-//                .firstName("Tural")
-//                .lastName("Bakirli")
-//                .age("26")
+//                .firstName("Ibrahim")
+//                .lastName("Hamidov")
+//                .age(26)
 //                .build();
 //        Student student1 = Student.builder()
-//                .firstName("Tofik")
-//                .lastName("Mikailov")
-//                .age("27")
+//                .firstName("Ayaz")
+//                .lastName("Nacafli")
+//                .age(27)
 //                .build();
 //
 //        studentRepository.save(student);
-////        group.setStudent(Set.of(student, student1));
+//        group.setStudents(Set.of(student, student1));
 //        Long groupId = groupRepository.save(group).getId();
 //
 //        //Act
@@ -55,8 +52,8 @@ public class GroupRepositoryTest {
 //        //Assert
 //        assertThat(groupFromDb).isNotNull();
 //        assertThat(groupFromDb.get().getName()).isEqualTo("Microservices");
-//        assertThat(groupFromDb.get().getStudent()).isNotNull();
-//        assertThat(groupFromDb.get().getStudent().stream().count()).isEqualTo(2);
-//        groupFromDb.get().getStudent().forEach(s -> assertThat(s.getId()).isNotNull());
+//        assertThat(groupFromDb.get().getStudents()).isNotNull();
+//        assertThat(groupFromDb.get().getStudents().stream().count()).isEqualTo(2);
+//        groupFromDb.get().getStudents().forEach(s -> assertThat(s.getId()).isNotNull());
 //    }
 }

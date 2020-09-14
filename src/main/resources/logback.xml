@@ -6,7 +6,7 @@
             </Pattern>
         </encoder>
     </appender>
-    <logger name="az.ingress.student" level="TRACE" additivity="false">
+    <logger name="az.ingress" level="TRACE" additivity="false">
         <appender-ref ref="STUDENT"/>
     </logger>
     <root level="INFO">

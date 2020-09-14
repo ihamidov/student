@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
-      id: 16082020-2
-      author: ihamidov
+      id: 20200815-1
+      author: iyusubov
       changes:
         - createTable:
             columns:
@@ -18,4 +18,4 @@ databaseChangeLog:
               - column:
                   name: city
                   type: VARCHAR(255)
-            tableName: address
+            tableName: addresses

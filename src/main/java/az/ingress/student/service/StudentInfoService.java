@@ -1,15 +1,19 @@
 package az.ingress.student.service;
 
+import az.ingress.student.dto.GenericSearchDto;
 import az.ingress.student.dto.StudentDto;
 import az.ingress.student.exceptionns.StudentNotFoundException;
 import az.ingress.student.model.Student;
 import az.ingress.student.repository.StudentRepository;
+import az.ingress.student.search.SearchSpecification;
 import java.util.List;
+import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.repository.query.Param;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
 @RequiredArgsConstructor
@@ -37,18 +41,18 @@ public class StudentInfoService {
         return studentRepository.findAll();
     }
 
-    public List<Student> findByFirstAndLast(String firstName, String lastName) {
-        return studentRepository.findByFirstNameStartsWithAndLastNameStartsWith(firstName,lastName);
-
+    public List<Student> findByFirstAndLastName(String firstName, String lastName) {
+        //return studentRepository.findByFirstNameStartsWithAndLastNameStartsWith(firstName,lastName);
+        //return studentRepository.findWithMyAwsomeQuery(lastName);
+       // String firstNameLike=firstName+"%";
+       // String lastNameLike=lastName+"%";
+        return studentRepository.findAllStudentsNative(firstName,lastName);
     }
 
-    public List<Student> findByLastNameWithMyQuery(String lastName) {
-        return studentRepository.withMyQuery(lastName);
-
+    @Transactional
+    public Page<StudentDto> search(GenericSearchDto filter, Pageable pageable) {
+        return studentRepository.findAll(new SearchSpecification<>(filter.getCriteria()), pageable)
+                .map(p -> mapper.map(p, StudentDto.class));
     }
 
-    public List<Student> withMyQueryNativeQuery(@RequestParam String firstName) {
-        return studentRepository.withMyQueryNativeQuery(firstName);
-
-    }
 }

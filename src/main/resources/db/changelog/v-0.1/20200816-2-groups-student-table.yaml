@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
-      id: 20200819
-      author: ihamidov
+      id: 20200816
+      author: iyusubov
       changes:
         - createTable:
             columns:

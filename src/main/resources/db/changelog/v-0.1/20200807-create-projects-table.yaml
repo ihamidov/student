@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
-      id: 17082020-3
-      author: ihamidov
+      id: 20200807
+      author: iyusubov
       changes:
         - createTable:
             columns:
@@ -9,10 +9,13 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    primaryKeyName: studentdetails_pkey
+                    primaryKeyName: project_pkey
                   name: id
                   type: bigint
               - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
                   name: description
                   type: VARCHAR(255)
-            tableName: student_details
+            tableName: projects

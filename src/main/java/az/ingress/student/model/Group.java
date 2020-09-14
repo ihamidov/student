@@ -1,5 +1,6 @@
 package az.ingress.student.model;
 
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -7,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -35,6 +38,12 @@ public class Group {
     private String name;
     private String description;
 
-//    @ManyToMany(mappedBy = "groups", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    private Set<Student> students;
+//    @ManyToMany(mappedBy = "groups")
+@ManyToMany(            fetch = FetchType.EAGER ,cascade = { CascadeType.ALL })
+@JoinTable(
+        name = "groups_students",
+        joinColumns =  @JoinColumn(name = "student_id") ,
+        inverseJoinColumns =  @JoinColumn(name = "group_id")
+)
+    private Set<Student> students= new HashSet<>();
 }

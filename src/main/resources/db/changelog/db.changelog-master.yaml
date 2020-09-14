@@ -1,21 +1,17 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/v-0.1/db.student-table-20200725.yaml
-  - include:
-      file: db/changelog/v-0.1/db.student-table-add-clm-20200725-1.yaml
+      file: db/changelog/v-0.1/20200725-create-student-table.yaml
 #  - include:
-#      file: db/changelog/v-0.1/16082020-insert-student.yaml
+#      file: db/changelog/v-0.1/20200726-1-student-table-add-clm.yaml
   - include:
-      file: db/changelog/v-0.1/16082020-create-project.yaml
-  - include:
-      file: db/changelog/v-0.1/16082020-create-address.yaml
+      file: db/changelog/v-0.1/20200807-create-projects-table.yaml
 #  - include:
-#      file: db/changelog/v-0.1/20200817-insert-address.yaml
+#      file: db/changelog/v-0.1/20200809-insert-students-into-student.yaml
   - include:
-      file: db/changelog/v-0.1/17082020-create-studentdetails.yaml
+      file: db/changelog/v-0.1/20200815-1-create-address-table.yaml
   - include:
-      file: db/changelog/v-0.1/17082020-add-student-column.yaml
+      file: db/changelog/v-0.1/20200815-2-alter-student-table.yaml
+  - include :
+      file : db/changelog/v-0.1/20200816-1-create-group-table.yaml
   - include:
-     file: db/changelog/v-0.1/20200819-create-group.yaml
-  - include:
-     file: db/changelog/v-0.1/20200819-1-student-group.yaml
+      file: db/changelog/v-0.1/20200816-2-groups-student-table.yaml

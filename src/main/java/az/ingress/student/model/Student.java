@@ -29,7 +29,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "student")
+@Table(name = "students")
 @NamedQuery(name = "Student.findByAgeNamed", query = "SELECT s FROM Student s WHERE age=?1")
 public class Student {
 
@@ -39,23 +39,21 @@ public class Student {
 
     private String firstName;
     private String lastName;
-    private String age;
+    private Integer age;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_address")
     private Address address;
-    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "project_id", referencedColumnName = "id")
     private Project project;
 
-//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinTable(name = "groups_students",
-//            joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "group_id", referencedColumnName = "id"))
-//    private Set<Group> groups;
-
-
-//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "student")
-//    private StudentDetails studentDetails;
-
-
+    @ManyToMany(            fetch = FetchType.EAGER ,cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "groups_students",
+            joinColumns =  @JoinColumn(name = "student_id") ,
+            inverseJoinColumns =  @JoinColumn(name = "group_id")
+    )
+    private Set<Group> groups= new HashSet<>();;
 }

@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: 20200725
-      author: ihamidov
+      author: iyusubov
       changes:
         - createTable:
             columns:
@@ -19,6 +19,9 @@ databaseChangeLog:
                   name: last_name
                   type: VARCHAR(255)
               - column:
+                  name: age
+                  type: int4
+              - column:
                   name: student_address
                   type: bigint
-            tableName: student
+            tableName: students

@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20200809-01
+      author: iyusubov
+      changes:
+        - sql:
+            sql:  insert into students ( first_name, last_name, age) values ('Tural','Bakirli',27);
+        - sql:
+            sql:  insert into students ( first_name, last_name, age) values ('Tural','Bakirli',28);
+        - sql:
+            sql:  insert into students ( first_name, last_name, age) values ('Tural','Bakirli',29);
+        - sql:
+            sql:  insert into students ( first_name, last_name, age) values ('Tural','Bakirli',30);
+        - sql:
+            sql:  insert into students ( first_name, last_name, age) values ('Tural','Bakirli',31);

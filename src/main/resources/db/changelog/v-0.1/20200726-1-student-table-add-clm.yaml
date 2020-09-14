@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20200725-1
+      author: iyusubov
+      changes:
+        - addColumn:
+            tableName: students
